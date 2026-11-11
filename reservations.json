@@ -1,0 +1,37 @@
+[
+  {
+    "id": "RES-901",
+    "assetId": "LAB-101",
+    "assetName": "Computer Lab 1",
+    "userId": "FAC-202",
+    "userName": "Faculty 1",
+    "userRole": "FACULTY",
+    "date": "2026-11-12",
+    "timeSlot": "10:00 - 12:00 PM",
+    "purpose": "Course Lab Session 1",
+    "addons": [
+      "Emergency UPS Power Backup",
+      "Dedicated Lab Staff Assistant"
+    ],
+    "totalCost": 165,
+    "status": "APPROVED",
+    "submittedAt": "2026-11-08T09:15:00Z"
+  },
+  {
+    "id": "RES-902",
+    "assetId": "SEM-201",
+    "assetName": "Seminar Hall 1",
+    "userId": "STU-101",
+    "userName": "Student 1",
+    "userRole": "STUDENT",
+    "date": "2026-11-14",
+    "timeSlot": "02:00 - 04:00 PM",
+    "purpose": "Student Chapter Meeting 1",
+    "addons": [
+      "HD Laser Projector"
+    ],
+    "totalCost": 165,
+    "status": "PENDING",
+    "submittedAt": "2026-11-08T10:30:00Z"
+  }
+]
