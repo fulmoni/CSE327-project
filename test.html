@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CFERS - Role Capabilities, Security Matrix & Test Index | North South University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css?v=14">
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .doc-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 60px 24px;
+    }
+    .doc-header {
+      background: linear-gradient(135deg, #090d16 0%, #1e1b4b 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
+    }
+    .doc-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .univ-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .doc-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+    .doc-subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      max-width: 800px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .btn-return-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-return-app:hover {
+      background: #7dd3fc;
+      transform: translateY(-1px);
+    }
+    .summary-matrix-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .summary-matrix-table th {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: left;
+    }
+    .summary-matrix-table td {
+      padding: 12px 16px;
+      font-size: 12.5px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+    }
+    .summary-matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+    .summary-matrix-table tr:hover td {
+      background-color: #f8fafc;
+    }
+    .badge-allowed {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .badge-blocked {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #fee2e2;
+      color: #b91c1c;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .badge-scoped {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #fef3c7;
+      color: #b45309;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .role-grid-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 900px) {
+      .role-grid-section {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card-detail {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 22px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card-detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f1f5f9;
+      margin-bottom: 14px;
+    }
+    .card-detail-header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .detail-section-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 14px 0 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="doc-container">
+
+    <!-- Header Banner -->
+    <header class="doc-header">
+      <div class="doc-header-top">
+        <div class="univ-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"></path></svg>
+          North South University • CSE327 Software Engineering
+        </div>
+        <a href="index.html" class="btn-return-app">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Return to Live Portal
+        </a>
+      </div>
+      <h1 class="doc-title">CFERS 4-Role Capabilities Matrix &amp; Automated Verification Suite</h1>
+      <p class="doc-subtitle">
+        Exhaustive capabilities, security boundaries, and operational options for <strong>Student</strong>, <strong>Faculty</strong>, <strong>Facility Officer</strong>, and <strong>Administrator</strong>, verified against 6 Gang of Four (GoF) design patterns.
+      </p>
+    </header>
+
+    <!-- LIVE IN-BROWSER AUTOMATED TEST RUNNER -->
+    <section class="card-detail" style="margin-bottom: 28px;">
+      <div class="card-detail-header">
+        <div>
+          <h3 style="display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Interactive In-Browser Test Runner (42 Assertions)
+          </h3>
+          <p style="margin:4px 0 0 0; font-size:12px; color:#64748b;">
+            Executes full suite of permission tests, security proxies, error traps, and pattern assertions live in this browser instance.
+          </p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button id="btn-doc-run-all" class="btn-master-run">
+            ▶ Run All 4 Role Suites
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Role Action Buttons -->
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
+        <button id="btn-doc-run-student" class="btn-sub-run">Run Student Suite (11 Assertions)</button>
+        <button id="btn-doc-run-faculty" class="btn-sub-run">Run Faculty Suite (10 Assertions)</button>
+        <button id="btn-doc-run-admin" class="btn-sub-run">Run Officer Suite (11 Assertions)</button>
+        <button id="btn-doc-run-sadmin" class="btn-sub-run">Run Admin Suite (11 Assertions)</button>
+        <button id="btn-doc-clear-log" class="btn-sub-run" style="margin-left:auto;">Clear Console</button>
+      </div>
+
+      <!-- Progress Strip -->
+      <div class="test-progress-strip">
+        <div class="test-progress-bar-bg">
+          <div id="doc-test-progress-fill" class="test-progress-bar-fill"></div>
+        </div>
+        <div id="doc-test-counter" class="test-progress-counter">0 / 42 Tests Passed (0%)</div>
+      </div>
+
+      <!-- Terminal Output -->
+      <div class="test-terminal-wrapper">
+        <div class="test-terminal-header">
+          <div class="terminal-title-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+            <span class="terminal-label">CFERS_TEST_KERNEL_v2.4</span>
+          </div>
+          <div class="terminal-actions">
+            <button id="btn-doc-copy-log" class="btn-terminal-action">Copy Output</button>
+          </div>
+        </div>
+        <div id="doc-test-terminal" class="test-terminal-output">
+          <div class="log-info">[READY] CFERS Test Engine initialized. Click 'Run All 4 Role Suites' to execute 42 automated assertions.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1-CLICK ROLE SHORTCUTS SECTION -->
+    <section style="margin-bottom: 28px;">
+      <h2 style="font-size:18px; font-weight:800; margin-bottom:14px; color:#0f172a;">1-Click Role Launch Shortcuts</h2>
+      <div class="role-shortcuts-grid">
+        <!-- Student -->
+        <div class="role-shortcut-card">
+          <div>
+            <div class="role-shortcut-header">
+              <span class="user-role-badge-pill badge-student">STUDENT</span>
+              <span style="font-size:11px; color:#64748b; font-weight:700;">ID: STU-101</span>
+            </div>
+            <div class="role-shortcut-title">Student 1</div>
+            <div class="role-shortcut-sub">student1@northsouth.edu</div>
+          </div>
+          <a href="index.html?role=STUDENT" class="btn-quick-switch-role">
+            Launch as Student
+          </a>
+        </div>
+
+        <!-- Faculty -->
+        <div class="role-shortcut-card">
+          <div>
+            <div class="role-shortcut-header">
+              <span class="user-role-badge-pill badge-faculty">FACULTY</span>
+              <span style="font-size:11px; color:#64748b; font-weight:700;">ID: FAC-202</span>
+            </div>
+            <div class="role-shortcut-title">Faculty 1</div>
+            <div class="role-shortcut-sub">faculty1@northsouth.edu</div>
+          </div>
+          <a href="index.html?role=FACULTY" class="btn-quick-switch-role">
+            Launch as Faculty
+          </a>
+        </div>
+
+        <!-- Admin -->
+        <div class="role-shortcut-card">
+          <div>
+            <div class="role-shortcut-header">
+              <span class="user-role-badge-pill badge-admin">ADMIN (LAB-101)</span>
+              <span style="font-size:11px; color:#64748b; font-weight:700;">ID: ADM-303</span>
+            </div>
+            <div class="role-shortcut-title">Officer 1</div>
+            <div class="role-shortcut-sub">admin1@northsouth.edu</div>
+          </div>
+          <a href="index.html?role=ADMIN" class="btn-quick-switch-role">
+            Launch as Facility Admin
+          </a>
+        </div>
+
+        <!-- Super Admin -->
+        <div class="role-shortcut-card" style="border-top: 3px solid #4f46e5;">
+          <div>
+            <div class="role-shortcut-header">
+              <span class="user-role-badge-pill sadmin-badge">ADMIN</span>
+              <span style="font-size:11px; color:#64748b; font-weight:700;">ROOT</span>
+            </div>
+            <div class="role-shortcut-title">Admin 1</div>
+            <div class="role-shortcut-sub">superadmin@northsouth.edu</div>
+          </div>
+          <a href="index.html#sadmin" class="btn-quick-switch-role" style="background:#4f46e5; color:white; border-color:#4f46e5;">
+            Launch via /sadmin
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE ROLE CAPABILITIES COMPARISON TABLE -->
+    <section style="margin-bottom: 32px;">
+      <h2 style="font-size:18px; font-weight:800; margin-bottom:14px; color:#0f172a;">Cross-Role Permission &amp; Capability Matrix</h2>
+      <div style="overflow-x: auto;">
+        <table class="summary-matrix-table">
+          <thead>
+            <tr>
+              <th style="width:25%;">System Capability / Operation</th>
+              <th style="width:18%;">Student Role</th>
+              <th style="width:18%;">Faculty Role</th>
+              <th style="width:19%;">Facility Admin</th>
+              <th style="width:20%;">Admin (Root Authority)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Browse University Catalog</strong><br><small style="color:#64748b;">View active labs, halls &amp; kits</small></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Decorator Booking</strong><br><small style="color:#64748b;">Extended hours, technicians, insurance</small></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Personal Bookings &amp; Vouchers</strong><br><small style="color:#64748b;">View history &amp; print Bursar vouchers</small></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Self-Service Cancellation</strong><br><small style="color:#64748b;">Cancel pending reservations</small></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Department Master Schedule</strong><br><small style="color:#64748b;">Inspect timeslot allocations campus-wide</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Queue Prioritization</strong><br><small style="color:#64748b;">Preempt standard requests in queue</small></td>
+              <td><span class="badge-blocked">✖ Standard FCFS</span></td>
+              <td><span class="badge-allowed">✔ Academic Priority</span></td>
+              <td><span class="badge-blocked">✖ Standard</span></td>
+              <td><span class="badge-allowed">✔ Root Priority</span></td>
+            </tr>
+            <tr>
+              <td><strong>Approval Desk Access</strong><br><small style="color:#64748b;">Review and approve/reject bookings</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-scoped">⚡ Scoped to 1 Facility</span></td>
+              <td><span class="badge-allowed">✔ Global Override</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cross-Facility Approvals</strong><br><small style="color:#64748b;">Approve requests for other labs</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked (ERR_SCOPE)</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Self-Approval of Own Bookings</strong><br><small style="color:#64748b;">Approve own reservation request</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked (ERR_SELF_APP)</span></td>
+              <td><span class="badge-allowed">✔ Root Audit Override</span></td>
+            </tr>
+            <tr>
+              <td><strong>Facility Operational Maintenance</strong><br><small style="color:#64748b;">Toggle facility offline/online</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-scoped">⚡ Assigned Facility Only</span></td>
+              <td><span class="badge-allowed">✔ Any Facility</span></td>
+            </tr>
+            <tr>
+              <td><strong>Queue Strategy Switching</strong><br><small style="color:#64748b;">Toggle FCFS vs Faculty Priority</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>System Audit Trail</strong><br><small style="color:#64748b;">Inspect security logs &amp; SHA hashes</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked (Privacy Guard)</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>JSON Database Engine</strong><br><small style="color:#64748b;">View &amp; export raw tables</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-allowed">✔ Allowed</span></td>
+            </tr>
+            <tr>
+              <td><strong>1-to-1 Jurisdiction Mapping</strong><br><small style="color:#64748b;">Assign exclusive admin to facility</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-allowed">✔ Root Exclusive</span></td>
+            </tr>
+            <tr>
+              <td><strong>User Directory CRUD</strong><br><small style="color:#64748b;">Register, edit, delete user accounts</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-allowed">✔ Root Exclusive</span></td>
+            </tr>
+            <tr>
+              <td><strong>Facility Inventory CRUD</strong><br><small style="color:#64748b;">Register or decommission assets</small></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-blocked">✖ Blocked</span></td>
+              <td><span class="badge-allowed">✔ Root Exclusive</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4 IN-DEPTH ROLE PROFILES -->
+    <section>
+      <h2 style="font-size:18px; font-weight:800; margin-bottom:14px; color:#0f172a;">Detailed Role Specifications</h2>
+      <div class="role-grid-section">
+
+        <!-- Role 1: Student -->
+        <div class="card-detail">
+          <div class="card-detail-header">
+            <div>
+              <span class="user-role-badge-pill badge-student">ROLE 1</span>
+              <h3 style="margin-top:4px;">Student Profile</h3>
+            </div>
+            <small style="color:#64748b; font-family:var(--font-mono);">STU-101 (Student 1)</small>
+          </div>
+
+          <div class="detail-section-title title-can">What We CAN Do</div>
+          <ul class="matrix-list matrix-list-can">
+            <li>Browse all campus facilities across engineering, multimedia, and hardware kits.</li>
+            <li>Filter catalog by asset category (Labs, Seminars, Hardware) and search by keyword or specs.</li>
+            <li>Apply GoF Decorator add-ons with dynamic price computation ($25 Extended Hours, $50 Priority Setup, $35 Technician, $20 Insurance).</li>
+            <li>Submit booking requests with purpose, duration, date, and timeslot.</li>
+            <li>View personal reservation history with live status badges (PENDING, APPROVED, REJECTED, CANCELLED).</li>
+            <li>Cancel personal pending or approved reservations before timeslot begins.</li>
+            <li>Generate and print official North South University Bursar Vouchers with verification watermark and QR code.</li>
+          </ul>
+
+          <div class="detail-section-title title-cannot">What We CANNOT Do (Security Traps)</div>
+          <ul class="matrix-list matrix-list-cannot">
+            <li>Cannot access Admin Approvals Desk <span class="error-pill-chip">ERR_UNAUTHORIZED_ROLE</span></li>
+            <li>Cannot access Department Master Schedule tab</li>
+            <li>Cannot approve or reject reservations via proxy <span class="error-pill-chip">ERR_UNAUTHORIZED_ROLE</span></li>
+            <li>Cannot book offline facilities in maintenance <span class="error-pill-chip">ERR_FACILITY_OFFLINE</span></li>
+            <li>Cannot exceed fair-use quota of 3 concurrent active bookings <span class="error-pill-chip">ERR_QUOTA_EXCEEDED</span></li>
+            <li>Cannot double-book the same facility on the same day <span class="error-pill-chip">ERR_SAME_DAY_MONOPOLIZATION</span></li>
+            <li>Cannot access Audit Logs, JSON DB Engine, or Super Admin portals.</li>
+          </ul>
+
+          <div class="detail-section-title title-options">All Available Options &amp; UI Controls</div>
+          <ul class="matrix-list matrix-list-options">
+            <li>Category filter pills: <code>All</code>, <code>Labs</code>, <code>Seminar Halls</code>, <code>Hardware Kits</code>.</li>
+            <li>Real-time search bar with instant query matching.</li>
+            <li>Booking Modal options: Date picker, 2-hour timeslot selector, Purpose textarea.</li>
+            <li>Decorator checkboxes: 4 optional add-ons with dynamic live total updates.</li>
+            <li>Voucher Modal: Print to paper/PDF button, Dismiss modal.</li>
+          </ul>
+        </div>
+
+        <!-- Role 2: Faculty -->
+        <div class="card-detail">
+          <div class="card-detail-header">
+            <div>
+              <span class="user-role-badge-pill badge-faculty">ROLE 2</span>
+              <h3 style="margin-top:4px;">Faculty Profile</h3>
+            </div>
+            <small style="color:#64748b; font-family:var(--font-mono);">FAC-202 (Faculty 1)</small>
+          </div>
+
+          <div class="detail-section-title title-can">What We CAN Do</div>
+          <ul class="matrix-list matrix-list-can">
+            <li>All Student capabilities: Catalog browsing, multi-criteria filtering, search, decorator add-ons.</li>
+            <li>Inspect Department Master Schedule across all departmental assets and timeslots.</li>
+            <li>Submit reservations with verified Faculty Academic Priority credentials.</li>
+            <li>Benefit from Faculty Priority Queue Strategy: Preempts student bookings in approval queue.</li>
+            <li>View personal faculty course &amp; makeup bookings in history.</li>
+            <li>Print official Bursar vouchers for course departmental billing.</li>
+          </ul>
+
+          <div class="detail-section-title title-cannot">What We CANNOT Do (Security Traps)</div>
+          <ul class="matrix-list matrix-list-cannot">
+            <li>Cannot approve or reject requests for students or other faculty <span class="error-pill-chip">ERR_UNAUTHORIZED_ROLE</span></li>
+            <li>Cannot self-approve their own course bookings <span class="error-pill-chip">ERR_UNAUTHORIZED_ROLE</span></li>
+            <li>Cannot access Admin Approvals Desk</li>
+            <li>Cannot toggle facility maintenance availability <span class="error-pill-chip">ERR_UNAUTHORIZED</span></li>
+            <li>Cannot access Audit Logs or JSON Database Engine</li>
+            <li>Cannot access Super Admin console</li>
+          </ul>
+
+          <div class="detail-section-title title-options">All Available Options &amp; UI Controls</div>
+          <ul class="matrix-list matrix-list-options">
+            <li>Master Department Schedule view with asset grid and slot occupancy.</li>
+            <li>Faculty Priority Academic booking options.</li>
+            <li>Course &amp; Makeup session reason tagging.</li>
+            <li>All standard catalog filters and decorator add-on checkboxes.</li>
+          </ul>
+        </div>
+
+        <!-- Role 3: Facility Officer -->
+        <div class="card-detail">
+          <div class="card-detail-header">
+            <div>
+              <span class="user-role-badge-pill badge-admin">ROLE 3</span>
+              <h3 style="margin-top:4px;">Facility Admin (1-to-1 Jurisdiction)</h3>
+            </div>
+            <small style="color:#64748b; font-family:var(--font-mono);">ADM-303 (Admin 1 - LAB-101)</small>
+          </div>
+
+          <div class="detail-section-title title-can">What We CAN Do</div>
+          <ul class="matrix-list matrix-list-can">
+            <li>Access Approval Desk tab strictly filtered to assigned facility (1-to-1 Injective Jurisdiction).</li>
+            <li>Approve pending reservations for assigned facility with optional remarks.</li>
+            <li>Reject pending reservations for assigned facility with mandatory documentation.</li>
+            <li>Toggle operational status of assigned facility (Set Offline for Maintenance / Set Online).</li>
+            <li>Switch Queue Allocation Policy via segmented buttons (FCFS Standard vs Faculty Priority).</li>
+            <li>View Department Master Schedule and personal bookings.</li>
+          </ul>
+
+          <div class="detail-section-title title-cannot">What We CANNOT Do (Security Traps)</div>
+          <ul class="matrix-list matrix-list-cannot">
+            <li>Cannot approve requests for other campus facilities <span class="error-pill-chip">ERR_UNAUTHORIZED_RESOURCE_SCOPE</span></li>
+            <li>Cannot approve their own personal reservations <span class="error-pill-chip">ERR_SELF_APPROVAL_PROHIBITED</span></li>
+            <li>Cannot access System Audit Logs <span class="error-pill-chip">SECURITY_VIOLATION</span></li>
+            <li>Cannot access JSON Database Engine <span class="error-pill-chip">SECURITY_VIOLATION</span></li>
+            <li>Cannot access Super Admin portal</li>
+            <li>Cannot register or delete campus facilities or user accounts</li>
+          </ul>
+
+          <div class="detail-section-title title-options">All Available Options &amp; UI Controls</div>
+          <ul class="matrix-list matrix-list-options">
+            <li>Queue Strategy Segmented Buttons: <code>FCFS (Standard)</code> or <code>Faculty Priority</code>.</li>
+            <li>Facility Action: <code>Set Offline (Maintenance)</code> / <code>Set Online (Available)</code>.</li>
+            <li>Approval Desk actions: <code>Approve</code> (green button) and <code>Reject</code> (red button).</li>
+            <li>Decision Remarks input prompt for audit trail compliance.</li>
+          </ul>
+        </div>
+
+        <!-- Role 4: Administrator -->
+        <div class="card-detail" style="border-top: 3px solid #4f46e5;">
+          <div class="card-detail-header">
+            <div>
+              <span class="user-role-badge-pill sadmin-badge">ROLE 4</span>
+              <h3 style="margin-top:4px;">Super Admin (Root System Authority)</h3>
+            </div>
+            <small style="color:#64748b; font-family:var(--font-mono);">ADM-001 (Admin 1)</small>
+          </div>
+
+          <div class="detail-section-title title-can">What We CAN Do</div>
+          <ul class="matrix-list matrix-list-can">
+            <li>Access isolated <code>#sadmin</code> executive login portal.</li>
+            <li>Root uninhibited access across all 7 portals (Catalog, Schedule, My Bookings, Approvals, Audit, DB Engine, Super Admin).</li>
+            <li>1-to-1 Injective Facility Jurisdiction Manager: Assign or revoke facility management rights to admins.</li>
+            <li>User Directory CRUD: Create, read, update, and delete institutional users across all roles.</li>
+            <li>Facility Inventory CRUD: Register new campus facilities, edit specs, decommission facilities.</li>
+            <li>Global Approval Override: Review and approve/reject bookings across ANY facility university-wide.</li>
+            <li>Inspect complete cryptographic Audit Log trail with SHA event verification hashes.</li>
+            <li>Inspect, test, and export raw relational JSON Database Engine tables.</li>
+          </ul>
+
+          <div class="detail-section-title title-cannot">What We CANNOT Do (Security Traps)</div>
+          <ul class="matrix-list matrix-list-cannot">
+            <li>Cannot log in via standard public login modal (isolated strictly to /sadmin route).</li>
+            <li>Cannot assign 1 admin to multiple facilities <span class="error-pill-chip">ERR_ADMIN_ALREADY_ASSIGNED</span></li>
+            <li>Cannot assign multiple admins to the same facility <span class="error-pill-chip">ERR_RESOURCE_ALREADY_ASSIGNED</span></li>
+            <li>Cannot delete the root Super Administrator account <span class="error-pill-chip">ERR_PROTECTED_ENTITY</span></li>
+            <li>Cannot delete a user holding active/confirmed reservations <span class="error-pill-chip">ERR_USER_IN_USE</span></li>
+          </ul>
+
+          <div class="detail-section-title title-options">All Available Options &amp; UI Controls</div>
+          <ul class="matrix-list matrix-list-options">
+            <li>Jurisdiction Manager: Facility dropdown, Admin dropdown, <code>Assign Exclusive Jurisdiction</code>, <code>Revoke Jurisdiction</code>.</li>
+            <li>User CRUD Form: Name, Email, Password, Role selector, Department, NSU ID, Save/Cancel.</li>
+            <li>Facility CRUD Form: Asset Name, Type, Location, Capacity, Base Rate, Specs, Save/Decommission.</li>
+            <li>Audit Controls: <code>Export JSON Audit Trail</code>, <code>Verify Cryptographic Hash</code>.</li>
+            <li>Database Engine: Download Table JSON, View Table JSON, Import Table JSON.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- LOAD APPLICATION DEPENDENCIES FOR LIVE IN-PAGE TESTING -->
+  <script src="src/patterns/singleton.js?v=22"></script>
+  <script src="src/patterns/factory.js?v=11"></script>
+  <script src="src/patterns/strategy.js?v=11"></script>
+  <script src="src/patterns/observer.js?v=11"></script>
+  <script src="src/patterns/decorator.js?v=11"></script>
+  <script src="src/patterns/proxy.js?v=22"></script>
+  <script src="src/test_runner.js?v=22"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const db = window.DatabaseManager.getInstance();
+      const subject = new window.BookingSubject();
+      const realService = new window.RealBookingService(subject);
+      const proxy = new window.SecureBookingProxy(realService);
+      const scheduler = new window.SchedulerContext(new window.FCFSStrategy());
+
+      const terminal = document.getElementById("doc-test-terminal");
+      const progressFill = document.getElementById("doc-test-progress-fill");
+      const counterText = document.getElementById("doc-test-counter");
+
+      function updateProgress(passed, total) {
+        const pct = Math.round((passed / total) * 100);
+        progressFill.style.width = pct + "%";
+        counterText.textContent = `${passed} / ${total} Tests Passed (${pct}%)`;
+      }
+
+      window.CFERSTestEngine.addTestListener((entry) => {
+        const div = document.createElement("div");
+        if (entry.level === "ALL_START" || entry.level === "ALL_COMPLETE") {
+          div.className = "log-banner";
+          div.textContent = entry.title;
+        } else if (entry.level === "SUITE_START" || entry.level === "SUITE_COMPLETE") {
+          div.className = "log-info";
+          div.textContent = `[${entry.role}] ${entry.title}`;
+        } else if (entry.level === "ASSERT") {
+          div.className = entry.passed ? "log-pass" : "log-fail";
+          div.textContent = `[${entry.passed ? "PASS" : "FAIL"}] [${entry.role}] ${entry.title}: ${entry.details}`;
+        }
+        terminal.appendChild(div);
+        terminal.scrollTop = terminal.scrollHeight;
+      });
+
+      // Wire Buttons
+      document.getElementById("btn-doc-run-all").addEventListener("click", async () => {
+        terminal.innerHTML = "";
+        db.resetToDefaults();
+        const summary = await window.CFERSTestEngine.runAllRoleTests(proxy, scheduler);
+        updateProgress(summary.passed, summary.total);
+      });
+
+      document.getElementById("btn-doc-run-student").addEventListener("click", async () => {
+        const res = await window.CFERSTestEngine.runStudentTest(proxy, scheduler);
+        updateProgress(res.filter(r => r.passed).length, res.length);
+      });
+
+      document.getElementById("btn-doc-run-faculty").addEventListener("click", async () => {
+        const res = await window.CFERSTestEngine.runFacultyTest(proxy, scheduler);
+        updateProgress(res.filter(r => r.passed).length, res.length);
+      });
+
+      document.getElementById("btn-doc-run-admin").addEventListener("click", async () => {
+        const res = await window.CFERSTestEngine.runAdminTest(proxy, scheduler);
+        updateProgress(res.filter(r => r.passed).length, res.length);
+      });
+
+      document.getElementById("btn-doc-run-sadmin").addEventListener("click", async () => {
+        const res = await window.CFERSTestEngine.runSuperAdminTest(proxy, scheduler);
+        updateProgress(res.filter(r => r.passed).length, res.length);
+      });
+
+      document.getElementById("btn-doc-clear-log").addEventListener("click", () => {
+        terminal.innerHTML = "<div class='log-info'>[CLEARED] Console output cleared. Ready for next test run.</div>";
+        updateProgress(0, 43);
+      });
+
+      document.getElementById("btn-doc-copy-log").addEventListener("click", () => {
+        navigator.clipboard.writeText(terminal.innerText).then(() => {
+          alert("Test log copied to clipboard.");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
