@@ -1,0 +1,9 @@
+[
+  {
+    "id": "LOG-001",
+    "event": "SYSTEM_INITIALIZED",
+    "actor": "System",
+    "details": "Enterprise database seeded with generic inventory and user accounts.",
+    "timestamp": "2026-11-08T08:00:00Z"
+  }
+]

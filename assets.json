@@ -1,0 +1,62 @@
+[
+  {
+    "id": "LAB-101",
+    "name": "Computer Lab 1",
+    "type": "LAB",
+    "location": "SAC-502",
+    "capacity": 35,
+    "specs": "35 Workstations, Ubuntu 22.04 LTS, Dedicated GPUs",
+    "status": "AVAILABLE",
+    "baseRate": 80
+  },
+  {
+    "id": "LAB-102",
+    "name": "Computer Lab 2",
+    "type": "LAB",
+    "location": "SAC-505",
+    "capacity": 30,
+    "specs": "30 Workstations, Windows 11, Network Simulator, Gigabit Switch",
+    "status": "AVAILABLE",
+    "baseRate": 75
+  },
+  {
+    "id": "SEM-201",
+    "name": "Seminar Hall 1",
+    "type": "SEMINAR",
+    "location": "AUDI-801",
+    "capacity": 120,
+    "specs": "Dual 4K Projectors, Wireless Audio Suite, Motorized Screen",
+    "status": "AVAILABLE",
+    "baseRate": 120
+  },
+  {
+    "id": "SEM-202",
+    "name": "Conference Room 1",
+    "type": "SEMINAR",
+    "location": "SAC-1110",
+    "capacity": 25,
+    "specs": "Conference System, 85-inch Interactive Display, Soundproofing",
+    "status": "AVAILABLE",
+    "baseRate": 60
+  },
+  {
+    "id": "KIT-301",
+    "name": "Hardware Kit 1",
+    "type": "HARDWARE",
+    "location": "Locker Bench A",
+    "capacity": 1,
+    "specs": "Microcontroller unit, sensor kit, motor controllers",
+    "status": "AVAILABLE",
+    "baseRate": 30
+  },
+  {
+    "id": "KIT-302",
+    "name": "Hardware Kit 2",
+    "type": "HARDWARE",
+    "location": "Locker Bench B",
+    "capacity": 1,
+    "specs": "Embedded boards, wireless transceivers, sensor suite",
+    "status": "AVAILABLE",
+    "baseRate": 25
+  }
+]

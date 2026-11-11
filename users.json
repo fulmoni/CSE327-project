@@ -1,0 +1,74 @@
+[
+  {
+    "id": "STU-101",
+    "name": "Student 1",
+    "email": "student1@northsouth.edu",
+    "password": "password123",
+    "role": "STUDENT",
+    "dept": "Computer Science & Engineering",
+    "nsuId": "2121001"
+  },
+  {
+    "id": "STU-102",
+    "name": "Student 2",
+    "email": "student2@northsouth.edu",
+    "password": "password123",
+    "role": "STUDENT",
+    "dept": "Computer Science & Engineering",
+    "nsuId": "2121002"
+  },
+  {
+    "id": "FAC-202",
+    "name": "Faculty 1",
+    "email": "faculty1@northsouth.edu",
+    "password": "password123",
+    "role": "FACULTY",
+    "dept": "Computer Science & Engineering",
+    "nsuId": "FAC-001"
+  },
+  {
+    "id": "FAC-203",
+    "name": "Faculty 2",
+    "email": "faculty2@northsouth.edu",
+    "password": "password123",
+    "role": "FACULTY",
+    "dept": "Computer Science & Engineering",
+    "nsuId": "FAC-002"
+  },
+  {
+    "id": "OFF-303",
+    "name": "Officer 1",
+    "email": "officer1@northsouth.edu",
+    "password": "password123",
+    "role": "OFFICER",
+    "dept": "Computing & Labs Officer",
+    "nsuId": "STAFF-001"
+  },
+  {
+    "id": "OFF-304",
+    "name": "Officer 2",
+    "email": "officer2@northsouth.edu",
+    "password": "password123",
+    "role": "OFFICER",
+    "dept": "Facilities & Events Officer",
+    "nsuId": "STAFF-002"
+  },
+  {
+    "id": "OFF-301",
+    "name": "Officer 3",
+    "email": "officer3@northsouth.edu",
+    "password": "password123",
+    "role": "OFFICER",
+    "dept": "Department Officer",
+    "nsuId": "STAFF-003"
+  },
+  {
+    "id": "ADM-001",
+    "name": "Admin 1",
+    "email": "admin@northsouth.edu",
+    "password": "admin123",
+    "role": "ADMIN",
+    "dept": "Central Administration & IT",
+    "nsuId": "ADMIN-001"
+  }
+]

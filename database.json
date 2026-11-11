@@ -1,0 +1,213 @@
+{
+  "users": [
+    {
+      "id": "STU-101",
+      "name": "Student 1",
+      "email": "student1@northsouth.edu",
+      "password": "password123",
+      "role": "STUDENT",
+      "dept": "Computer Science & Engineering",
+      "nsuId": "2121001"
+    },
+    {
+      "id": "STU-102",
+      "name": "Student 2",
+      "email": "student2@northsouth.edu",
+      "password": "password123",
+      "role": "STUDENT",
+      "dept": "Computer Science & Engineering",
+      "nsuId": "2121002"
+    },
+    {
+      "id": "FAC-202",
+      "name": "Faculty 1",
+      "email": "faculty1@northsouth.edu",
+      "password": "password123",
+      "role": "FACULTY",
+      "dept": "Computer Science & Engineering",
+      "nsuId": "FAC-001"
+    },
+    {
+      "id": "FAC-203",
+      "name": "Faculty 2",
+      "email": "faculty2@northsouth.edu",
+      "password": "password123",
+      "role": "FACULTY",
+      "dept": "Computer Science & Engineering",
+      "nsuId": "FAC-002"
+    },
+    {
+      "id": "OFF-303",
+      "name": "Officer 1",
+      "email": "officer1@northsouth.edu",
+      "password": "password123",
+      "role": "OFFICER",
+      "dept": "Computing & Labs Officer",
+      "nsuId": "STAFF-001"
+    },
+    {
+      "id": "OFF-304",
+      "name": "Officer 2",
+      "email": "officer2@northsouth.edu",
+      "password": "password123",
+      "role": "OFFICER",
+      "dept": "Facilities & Events Officer",
+      "nsuId": "STAFF-002"
+    },
+    {
+      "id": "OFF-301",
+      "name": "Officer 3",
+      "email": "officer3@northsouth.edu",
+      "password": "password123",
+      "role": "OFFICER",
+      "dept": "Department Officer",
+      "nsuId": "STAFF-003"
+    },
+    {
+      "id": "ADM-001",
+      "name": "Admin 1",
+      "email": "admin@northsouth.edu",
+      "password": "admin123",
+      "role": "ADMIN",
+      "dept": "Central Administration & IT",
+      "nsuId": "ADMIN-001"
+    }
+  ],
+  "assets": [
+    {
+      "id": "LAB-101",
+      "name": "Computer Lab 1",
+      "type": "LAB",
+      "location": "SAC-402",
+      "capacity": 35,
+      "specs": "35 Workstations, Ubuntu 22.04 LTS, Dedicated GPUs",
+      "status": "AVAILABLE",
+      "baseRate": 80
+    },
+    {
+      "id": "LAB-102",
+      "name": "Computer Lab 2",
+      "type": "LAB",
+      "location": "SAC-405",
+      "capacity": 30,
+      "specs": "30 Workstations, Windows 11, Network Simulator, Gigabit Switch",
+      "status": "AVAILABLE",
+      "baseRate": 75
+    },
+    {
+      "id": "SEM-201",
+      "name": "Seminar Hall 1",
+      "type": "SEMINAR",
+      "location": "NAC-514",
+      "capacity": 120,
+      "specs": "Dual 4K Projectors, Wireless Audio Suite, Motorized Screen",
+      "status": "AVAILABLE",
+      "baseRate": 120
+    },
+    {
+      "id": "SEM-202",
+      "name": "Conference Room 1",
+      "type": "SEMINAR",
+      "location": "SAC-1110",
+      "capacity": 25,
+      "specs": "Conference System, 85-inch Interactive Display, Soundproofing",
+      "status": "AVAILABLE",
+      "baseRate": 60
+    },
+    {
+      "id": "KIT-301",
+      "name": "Hardware Kit 1",
+      "type": "HARDWARE",
+      "location": "Locker Bench A",
+      "capacity": 1,
+      "specs": "Microcontroller unit, sensor kit, motor controllers",
+      "status": "AVAILABLE",
+      "baseRate": 30
+    },
+    {
+      "id": "KIT-302",
+      "name": "Hardware Kit 2",
+      "type": "HARDWARE",
+      "location": "Locker Bench B",
+      "capacity": 1,
+      "specs": "Embedded boards, wireless transceivers, sensor suite",
+      "status": "AVAILABLE",
+      "baseRate": 25
+    }
+  ],
+  "reservations": [
+    {
+      "id": "RES-901",
+      "assetId": "LAB-101",
+      "assetName": "Computer Lab 1",
+      "userId": "FAC-202",
+      "userName": "Faculty 1",
+      "userRole": "FACULTY",
+      "date": "2026-11-12",
+      "timeSlot": "10:00 - 12:00 PM",
+      "purpose": "Course Lab Session 1",
+      "addons": [
+        "Emergency UPS Power Backup",
+        "Dedicated Lab Staff Assistant"
+      ],
+      "totalCost": 165,
+      "status": "APPROVED",
+      "submittedAt": "2026-11-08T09:15:00Z"
+    },
+    {
+      "id": "RES-902",
+      "assetId": "SEM-201",
+      "assetName": "Seminar Hall 1",
+      "userId": "STU-101",
+      "userName": "Student 1",
+      "userRole": "STUDENT",
+      "date": "2026-11-14",
+      "timeSlot": "02:00 - 04:00 PM",
+      "purpose": "Student Chapter Meeting 1",
+      "addons": [
+        "HD Laser Projector"
+      ],
+      "totalCost": 165,
+      "status": "PENDING",
+      "submittedAt": "2026-11-08T10:30:00Z"
+    }
+  ],
+  "assignments": [
+    {
+      "assetId": "LAB-101",
+      "adminId": "OFF-303",
+      "assignedAt": "2026-11-08T08:00:00Z",
+      "assignedBy": "Admin 1"
+    },
+    {
+      "assetId": "SEM-201",
+      "adminId": "OFF-304",
+      "assignedAt": "2026-11-08T08:00:00Z",
+      "assignedBy": "Admin 1"
+    },
+    {
+      "assetId": "KIT-301",
+      "adminId": "OFF-301",
+      "assignedAt": "2026-11-08T08:00:00Z",
+      "assignedBy": "Admin 1"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "LOG-001",
+      "event": "SYSTEM_INITIALIZED",
+      "actor": "System",
+      "details": "Enterprise database seeded with generic inventory and user accounts.",
+      "timestamp": "2026-11-08T08:00:00Z"
+    }
+  ],
+  "currentUserSession": {
+    "id": "STU-101",
+    "name": "Student 1",
+    "email": "student1@northsouth.edu",
+    "password": "password123",
+    "role": "STUDENT",
+    "dept": "Computer Science & Engineering",
+    "nsuId": "2121001"
+  }
+}
